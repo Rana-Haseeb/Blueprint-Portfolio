@@ -19,6 +19,7 @@ import {
 import Panel, { CropMarks } from "./components/Panel";
 import Sidebar, { type NavItem } from "./components/Sidebar";
 import SkillGraph from "./components/SkillGraph";
+import ProjectStack from "./components/ProjectStack";
 
 /* -------------------------------------------------------------------------- */
 /* Blueprint data                                                             */
@@ -36,33 +37,6 @@ const vitals = [
   { k: "LOCATION", v: "PAKISTAN · UTC+05" },
   { k: "FOCUS", v: "MERN · AI/ML" },
   { k: "AVAILABILITY", v: "OPEN TO WORK" },
-];
-
-const projects = [
-  {
-    mod: "MOD_01",
-    title: "AI CSV Cleaner & Summarizer",
-    desc: "Full-stack tool that analyzes and cleans CSV datasets, then summarizes them with Google Gemini.",
-    tags: ["NEXT.JS", "NODE", "GEMINI"],
-    status: "SHIPPED",
-    href: "https://github.com/Rana-Haseeb/AI-Powered-CSV-Cleaner-Summarizer",
-  },
-  {
-    mod: "MOD_02",
-    title: "Inkwell — Blog Platform",
-    desc: "Blogging platform with a rich-text editor and an integrated AI writing assistant.",
-    tags: ["NEXT.JS", "TYPESCRIPT", "AI"],
-    status: "STABLE",
-    href: "https://github.com/Rana-Haseeb/inkwell-blog-app",
-  },
-  {
-    mod: "MOD_03",
-    title: "Cine-Vault",
-    desc: "Movie discovery platform with search and streaming availability across a typed React UI.",
-    tags: ["TYPESCRIPT", "REACT", "API"],
-    status: "LIVE",
-    href: "https://github.com/Rana-Haseeb/cine-vault",
-  },
 ];
 
 const pipeline = [
@@ -243,55 +217,13 @@ export default function Home() {
                 as="section"
                 id="sec-03"
                 label="SEC_03 // PROJECTS"
-                meta={["SCALE: 1:1", "MODULES: 03", "STATUS: DEPLOYED"]}
+                meta={["SCALE: 1:1", "MODULES: 04", "STATUS: DEPLOYED"]}
                 className="scroll-mt-24"
               >
-                <SectionTitle sub="// modules exploded for inspection">
+                <SectionTitle sub="// hover a build to explode its stack layers">
                   Component Deconstruction
                 </SectionTitle>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {projects.map((p) => (
-                    <article
-                      key={p.mod}
-                      className="group relative flex flex-col border border-blueprint-light/15 bg-blueprint-dark/30 p-5 transition-colors hover:border-accent-cyan/40"
-                    >
-                      <CropMarks className="border-blueprint-light/25" />
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] uppercase tracking-[0.25em] text-accent-cyan/70">
-                          {p.mod}
-                        </span>
-                        <span className="text-[10px] uppercase tracking-[0.2em] text-blueprint-light/40">
-                          STATUS: {p.status}
-                        </span>
-                      </div>
-                      <h3 className="mt-4 text-lg text-blueprint-light">
-                        {p.title}
-                      </h3>
-                      <p className="mt-2 flex-1 text-sm leading-relaxed text-blueprint-light/60">
-                        {p.desc}
-                      </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {p.tags.map((t) => (
-                          <span
-                            key={t}
-                            className="border border-blueprint-light/15 px-2 py-0.5 text-[10px] uppercase tracking-[0.15em] text-blueprint-light/50"
-                          >
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                      <a
-                        href={p.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-5 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-accent-cyan/80 transition-colors hover:text-accent-cyan"
-                      >
-                        Inspect
-                        <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} />
-                      </a>
-                    </article>
-                  ))}
-                </div>
+                <ProjectStack />
               </Panel>
             </Reveal>
 
