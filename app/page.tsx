@@ -7,14 +7,7 @@ import {
   Boxes,
   Component,
   Workflow,
-  Atom,
-  FileCode,
-  Server,
-  Palette,
-  Database,
   GitBranch,
-  Container,
-  Cloud,
   Inbox,
   Cpu,
   Send,
@@ -25,6 +18,7 @@ import {
 } from "lucide-react";
 import Panel, { CropMarks } from "./components/Panel";
 import Sidebar, { type NavItem } from "./components/Sidebar";
+import SkillGraph from "./components/SkillGraph";
 
 /* -------------------------------------------------------------------------- */
 /* Blueprint data                                                             */
@@ -39,43 +33,35 @@ const nav: NavItem[] = [
 
 const vitals = [
   { k: "ROLE", v: "SOFTWARE ENGINEER" },
-  { k: "LOCATION", v: "34.05N / 118.24W" },
-  { k: "RUNTIME", v: "5+ YEARS" },
+  { k: "LOCATION", v: "PAKISTAN · UTC+05" },
+  { k: "FOCUS", v: "MERN · AI/ML" },
   { k: "AVAILABILITY", v: "OPEN TO WORK" },
-];
-
-const nodes = [
-  { name: "REACT", meta: "N-01 · UI", icon: Atom },
-  { name: "TYPESCRIPT", meta: "N-02 · LANG", icon: FileCode },
-  { name: "NODE.JS", meta: "N-03 · RUNTIME", icon: Server },
-  { name: "TAILWIND", meta: "N-04 · STYLE", icon: Palette },
-  { name: "POSTGRESQL", meta: "N-05 · DATA", icon: Database },
-  { name: "GIT", meta: "N-06 · VCS", icon: GitBranch },
-  { name: "DOCKER", meta: "N-07 · OPS", icon: Container },
-  { name: "CLOUD", meta: "N-08 · INFRA", icon: Cloud },
 ];
 
 const projects = [
   {
     mod: "MOD_01",
-    title: "Orbital Dashboard",
-    desc: "Real-time telemetry console streaming thousands of events per second into a composable widget grid.",
-    tags: ["NEXT.JS", "D3", "WEBSOCKET"],
-    status: "DEPLOYED",
+    title: "AI CSV Cleaner & Summarizer",
+    desc: "Full-stack tool that analyzes and cleans CSV datasets, then summarizes them with Google Gemini.",
+    tags: ["NEXT.JS", "NODE", "GEMINI"],
+    status: "SHIPPED",
+    href: "https://github.com/Rana-Haseeb/AI-Powered-CSV-Cleaner-Summarizer",
   },
   {
     mod: "MOD_02",
-    title: "Ledger Engine",
-    desc: "Double-entry accounting core with deterministic replay, audit trails, and idempotent settlement.",
-    tags: ["NODE", "POSTGRES", "REDIS"],
+    title: "Inkwell — Blog Platform",
+    desc: "Blogging platform with a rich-text editor and an integrated AI writing assistant.",
+    tags: ["NEXT.JS", "TYPESCRIPT", "AI"],
     status: "STABLE",
+    href: "https://github.com/Rana-Haseeb/inkwell-blog-app",
   },
   {
     mod: "MOD_03",
-    title: "Vector Atlas",
-    desc: "Semantic search service mapping documents into a queryable embedding space with sub-100ms recall.",
-    tags: ["PYTHON", "FASTAPI", "PGVECTOR"],
-    status: "BETA",
+    title: "Cine-Vault",
+    desc: "Movie discovery platform with search and streaming availability across a typed React UI.",
+    tags: ["TYPESCRIPT", "REACT", "API"],
+    status: "LIVE",
+    href: "https://github.com/Rana-Haseeb/cine-vault",
   },
 ];
 
@@ -88,20 +74,20 @@ const pipeline = [
 const channels = [
   {
     label: "EMAIL",
-    value: "hello@example.com",
-    href: "mailto:hello@example.com",
+    value: "ranahaseeb92029@gmail.com",
+    href: "mailto:ranahaseeb92029@gmail.com",
     icon: Mail,
   },
   {
     label: "GITHUB",
-    value: "/your-handle",
-    href: "https://github.com",
+    value: "/Rana-Haseeb",
+    href: "https://github.com/Rana-Haseeb",
     icon: GitBranch,
   },
   {
     label: "LINKEDIN",
-    value: "/in/your-handle",
-    href: "https://linkedin.com",
+    value: "/rana-muhammad-haseeb-khan",
+    href: "https://www.linkedin.com/in/rana-muhammad-haseeb-khan-039098298/",
     icon: Briefcase,
   },
 ];
@@ -175,16 +161,16 @@ export default function Home() {
               // System Blueprint — Rev A.01
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-tight text-blueprint-light sm:text-6xl">
-              YOUR NAME<span className="text-accent-cyan">.</span>
+              RANA HASEEB<span className="text-accent-cyan">.</span>
             </h1>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-blueprint-light/70 sm:text-base">
-              Software engineer drafting resilient interfaces with the precision
-              of a schematic — a continuous, layout-driven system rendered on the
-              grid.
+              Software engineer &amp; AI/ML enthusiast. Full-stack developer
+              (MERN · Next.js) with C++ &amp; DSA foundations — building and
+              shipping real-world products on the grid.
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[10px] uppercase tracking-[0.25em] text-blueprint-light/40">
-              <span>LAT 34.0522</span>
-              <span>LON −118.2437</span>
+              <span>LAT 30.3753</span>
+              <span>LON 69.3451</span>
               <span>GRID 20 / 05</span>
               <span>UNITS px</span>
             </div>
@@ -206,15 +192,15 @@ export default function Home() {
                       System Overview
                     </SectionTitle>
                     <p className="max-w-2xl text-sm leading-relaxed text-blueprint-light/70 sm:text-base">
-                      I design and build software the way a draftsman lays out a
-                      schematic: measured, legible, and structurally honest. Every
-                      layer — from the interface down to the data plane — is drawn
-                      to spec and held to tolerance.
+                      I&apos;m Rana Muhammad Haseeb Khan — a software engineer and
+                      AI/ML enthusiast who builds full-stack products across the
+                      MERN and Next.js stacks, grounded in C++ and data
+                      structures.
                     </p>
                     <p className="mt-4 max-w-2xl text-sm leading-relaxed text-blueprint-light/60">
                       This document is a live blueprint of that practice. Scroll
-                      the pipeline to inspect capabilities, deployed modules, and
-                      the channels wired for input.
+                      the pipeline to inspect my capability stack, shipped
+                      modules, and the channels wired for input.
                     </p>
                   </div>
 
@@ -244,32 +230,10 @@ export default function Home() {
                 meta={["SCALE: 1:2", "NODES: 08", "STATUS: ONLINE"]}
                 className="scroll-mt-24"
               >
-                <SectionTitle sub="// addressable capability nodes on the grid">
+                <SectionTitle sub="// hover a node to trace its data stream">
                   Infrastructure Node Matrix
                 </SectionTitle>
-                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-                  {nodes.map((n) => {
-                    const Icon = n.icon;
-                    return (
-                      <div
-                        key={n.name}
-                        className="group relative border border-blueprint-light/15 bg-blueprint-dark/30 p-4 transition-colors hover:border-accent-cyan/40"
-                      >
-                        <CropMarks className="border-blueprint-light/25" />
-                        <Icon
-                          className="h-5 w-5 text-accent-cyan/80"
-                          strokeWidth={1.5}
-                        />
-                        <div className="mt-4 text-sm tracking-wide text-blueprint-light">
-                          {n.name}
-                        </div>
-                        <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-blueprint-light/40">
-                          {n.meta}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                <SkillGraph />
               </Panel>
             </Reveal>
 
@@ -317,7 +281,9 @@ export default function Home() {
                         ))}
                       </div>
                       <a
-                        href="#sec-03"
+                        href={p.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="mt-5 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] text-accent-cyan/80 transition-colors hover:text-accent-cyan"
                       >
                         Inspect
@@ -411,7 +377,7 @@ export default function Home() {
 
           {/* Footer stamp */}
           <footer className="mt-12 flex flex-wrap items-center justify-between gap-2 border-t border-blueprint-light/10 pt-5 text-[10px] uppercase tracking-[0.25em] text-blueprint-light/35">
-            <span>© {new Date().getFullYear()} — YOUR NAME</span>
+            <span>© {new Date().getFullYear()} — RANA HASEEB</span>
             <span>DWG 001 · SHEET 01 / 01</span>
           </footer>
         </div>

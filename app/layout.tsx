@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio · Blueprint",
+  title: "Rana Haseeb · Blueprint",
   description:
-    "A personal portfolio rendered as a high-precision CAD schematic interface.",
+    "Portfolio of Rana Muhammad Haseeb Khan — full-stack (MERN · Next.js) software engineer & AI/ML enthusiast, rendered as a CAD schematic interface.",
 };
 
 export default function RootLayout({
