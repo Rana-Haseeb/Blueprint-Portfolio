@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   LayoutDashboard,
@@ -8,18 +8,15 @@ import {
   Component,
   Workflow,
   GitBranch,
-  Inbox,
-  Cpu,
-  Send,
   Mail,
   Briefcase,
-  ArrowRight,
   ArrowUpRight,
 } from "lucide-react";
 import Panel, { CropMarks } from "./components/Panel";
 import Sidebar, { type NavItem } from "./components/Sidebar";
 import SkillGraph from "./components/SkillGraph";
 import ProjectStack from "./components/ProjectStack";
+import ContactConsole from "./components/ContactConsole";
 
 /* -------------------------------------------------------------------------- */
 /* Blueprint data                                                             */
@@ -37,12 +34,6 @@ const vitals = [
   { k: "LOCATION", v: "PAKISTAN · UTC+05" },
   { k: "FOCUS", v: "MERN · AI/ML" },
   { k: "AVAILABILITY", v: "OPEN TO WORK" },
-];
-
-const pipeline = [
-  { stage: "INPUT", label: "Ingest", desc: "Requirements & signals", icon: Inbox },
-  { stage: "PROCESS", label: "Build", desc: "Design · code · verify", icon: Cpu },
-  { stage: "OUTPUT", label: "Ship", desc: "Deploy & monitor", icon: Send },
 ];
 
 const channels = [
@@ -240,41 +231,14 @@ export default function Home() {
                   Data Pipeline Hub
                 </SectionTitle>
 
-                {/* Pipeline: horizontal array on desktop, vertical stack on mobile */}
-                <div className="flex flex-col items-stretch gap-3 sm:flex-row">
-                  {pipeline.map((s, i) => {
-                    const Icon = s.icon;
-                    return (
-                      <Fragment key={s.stage}>
-                        <div className="relative flex flex-1 flex-col border border-blueprint-light/15 bg-blueprint-dark/30 p-5">
-                          <CropMarks className="border-blueprint-light/25" />
-                          <div className="flex items-center gap-2 text-accent-cyan/80">
-                            <Icon className="h-5 w-5" strokeWidth={1.5} />
-                            <span className="text-[10px] uppercase tracking-[0.25em]">
-                              {s.stage}
-                            </span>
-                          </div>
-                          <div className="mt-4 text-base text-blueprint-light">
-                            {s.label}
-                          </div>
-                          <div className="mt-1 text-xs text-blueprint-light/50">
-                            {s.desc}
-                          </div>
-                        </div>
-                        {i < pipeline.length - 1 && (
-                          <ArrowRight
-                            aria-hidden
-                            className="mx-auto h-4 w-4 shrink-0 rotate-90 text-accent-cyan/50 sm:mx-0 sm:self-center sm:rotate-0"
-                            strokeWidth={1.5}
-                          />
-                        )}
-                      </Fragment>
-                    );
-                  })}
-                </div>
+                {/* Functional submission console (Next.js Server Action) */}
+                <ContactConsole />
 
-                {/* Endpoints */}
-                <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                {/* Direct channel endpoints */}
+                <p className="mt-6 mb-3 text-[10px] uppercase tracking-[0.25em] text-blueprint-light/35">
+                  // or route through a direct channel
+                </p>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                   {channels.map((c) => {
                     const Icon = c.icon;
                     return (
